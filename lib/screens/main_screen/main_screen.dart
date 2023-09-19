@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../products_screen/products_screen.dart';
+import '../tabbar_screen/tabbar_screen.dart';
 
 class MainScreen extends StatelessWidget {
   @override
@@ -20,7 +21,7 @@ class MainScreen extends StatelessWidget {
             ),
             SizedBox(height: 16.0),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 40.0), // Add space from the left
+              padding: EdgeInsets.symmetric(horizontal: 40.0),
               child: Text(
                 'Produckts is your go-to app for finding products at unbeatable prices. Shop smarter and save more with produckts!',
                 style: TextStyle(
@@ -61,6 +62,34 @@ class MainScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 16.0),
+            SizedBox(
+              width: 320,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => TabBarScreen()), // Navigate to TabBarScreen
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.orange,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Text(
+                    'Extra Products',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w900,
+                      fontSize: 20,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
